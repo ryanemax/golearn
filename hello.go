@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/ryanemax/gostringutil"
+	"./pkg_string"
 )
 
 
 func main() {
-	fmt.Printf(stringutil.Reverse("!oG , olleH"))
+	fmt.Printf(stringutil.Reverse("!oG , olleH")+"\n")
 
 }

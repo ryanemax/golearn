@@ -1,4 +1,4 @@
-package main
+package pkgcgo
 
 /*
 #include <stdio.h>
@@ -17,6 +17,6 @@ func Example() {
 	C.myprint(cs)
 	C.free(unsafe.Pointer(cs))
 }
-func main() {
-	Example()
-}
+//func main() {
+//	Example()
+//}
