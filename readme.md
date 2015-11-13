@@ -14,3 +14,5 @@ repos for learning go language
 
 # rest-main.go
 - 已经实现go-json-rest第三方RESTful api开发库的简单应用
+
+# main_io.go 学习GO的io标准库，对文件及目录的读写操作
