@@ -28,7 +28,7 @@ func Echo(c net.Conn) {
 
 func main() {
 	fmt.Println("Server is ready...\n")
-	ln, err := net.Listen("tcp", ":4567")
+	ln, err := net.Listen("tcp", ":8001")
 	if err != nil {
 		fmt.Println(err.Error, "\n")
 	}

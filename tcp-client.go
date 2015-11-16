@@ -32,7 +32,7 @@ func (c *Clienter) Connect() bool {
 
 		var err error
 
-		c.client, err = net.Dial("tcp", "182.92.5.210:4567")
+		c.client, err = net.Dial("tcp", "127.0.0.1:8001")
 
 		if err != nil {
 
