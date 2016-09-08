@@ -14,7 +14,7 @@ var nick string = ""
 var key = []byte("ncuimexsecret777")
 
 func main() {
-	addr, err := net.ResolveTCPAddr("tcp", ":1234")
+	addr, err := net.ResolveTCPAddr("tcp", "127.0.0.1:1234")
 	checkErr(err)
 	conn, err := net.DialTCP("tcp", nil, addr)
 	checkErr(err)
