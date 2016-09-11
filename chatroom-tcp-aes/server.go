@@ -26,6 +26,7 @@ func main() {
 }
 
 var key = []byte("ncuimexsecret777")
+var AesStatus = false
 
 const BufLength = 128
 
@@ -47,8 +48,11 @@ func Handle(conn net.Conn) {
 			}
 		}
 
-		data, err := AesDecrypt(data, key) // Aes解密
-		if err != nil {
+		if AesStatus {
+			var err error
+			data, err = AesDecrypt(data, key) // Aes解密
+			if err != nil {
+			}
 		}
 
 		fmt.Println(data)

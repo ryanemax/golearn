@@ -12,6 +12,7 @@ import (
 
 var nick string = ""
 var key = []byte("ncuimexsecret777")
+var AesStatus = false
 
 func main() {
 	addr, err := net.ResolveTCPAddr("tcp", "127.0.0.1:1234")
@@ -27,10 +28,16 @@ func main() {
 	fmt.Scanf("%v", &nick)
 	fmt.Println("Hello " + nick)
 	message := []byte("nick|" + nick)
-	messageencrypt, err := AesEncrypt(message, key)
+	if AesStatus {
+		message, err = AesEncrypt(message, key)
+		if err != nil {
+		}
+	} else {
+		message = message
+	}
 	if err != nil {
 	}
-	conn.Write(messageencrypt)
+	conn.Write(message)
 
 	go Handle(conn)
 
@@ -38,12 +45,13 @@ func main() {
 		someTex := ""
 		fmt.Scanf("%v", &someTex)
 		message := []byte("say|" + nick + "|" + someTex)
-		messageencrypt, err := AesEncrypt(message, key)
-		if err != nil {
+		if AesStatus {
+			message, err = AesEncrypt(message, key)
+			if err != nil {
+			}
 		}
 		fmt.Println(message)
-		fmt.Println(messageencrypt)
-		conn.Write(messageencrypt)
+		conn.Write(message)
 	}
 }
 
